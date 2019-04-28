@@ -18,9 +18,34 @@ namespace JotFormAuthenticator.Controllers
         }
 
         [HttpGet]
-        public List<FormModel> Get ()
+        public List<FormModel> Get()
         {
             return _repository.GetForms();
+        }
+
+        [HttpGet]
+        [Route("GetFields")]
+        public List<FieldModel> GetFields()
+        {
+            return _repository.GetAllFields();
+        }
+
+        [HttpGet]
+        [Route("GetSubmission")]
+        public FormModel GetSubmission(long SubmissionID)
+        {
+            FormModel form = _repository.GetFormSubmission(SubmissionID);
+
+
+
+            return form;
+        }
+
+        [HttpGet]
+        [Route("GetAll")]
+        public List<FormModel> GetAllForms()
+        {
+            return _repository.GetAllActiveForms();
         }
 
         [HttpPost]

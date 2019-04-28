@@ -19,5 +19,8 @@ namespace JotFormAuthenticator.Models
         public string FieldValue { get; set; }
         [Required]
         public long SubmissionID { get; set; }
+
+        [ForeignKey("FormID")]
+        public FormModel Form { get; set; }
     }
 }

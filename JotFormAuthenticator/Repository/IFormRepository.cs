@@ -10,5 +10,8 @@ namespace JotFormAuthenticator.Repository
     {
         void AddForm(FormModel Form);
         List<FormModel> GetForms();
+        List<FormModel> GetAllActiveForms();
+        FormModel GetFormSubmission(long SubmissionID);
+        List<FieldModel> GetAllFields();
     }
 }

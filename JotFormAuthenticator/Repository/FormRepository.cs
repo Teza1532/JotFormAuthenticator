@@ -26,5 +26,23 @@ namespace JotFormAuthenticator.Repository
         {
             return _context.Forms.ToList();
         }
+
+        public FormModel GetFormSubmission(long SubmissionID) {
+
+            return _context.Forms.Where(f => f.SubmissionID == SubmissionID).FirstOrDefault();
+        }
+
+        public List<FormModel> GetAllActiveForms()
+        {
+            return _context.Forms.Where(f => f.Accepted == null)
+                .GroupBy(f => f.FormID)
+                .Select(f => f.First())
+                .ToList();
+        }
+
+        public List<FieldModel> GetAllFields()
+        {
+            return _context.Fields.ToList();
+        }
     }
 }
