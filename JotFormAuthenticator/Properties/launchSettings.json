@@ -13,6 +13,9 @@
       "commandName": "IISExpress",
       "launchUrl": "api/values",
       "environmentVariables": {
+        "ServerUser": "user",
+        "ServerName": "localhost",
+        "SqlPass": "\"\"",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

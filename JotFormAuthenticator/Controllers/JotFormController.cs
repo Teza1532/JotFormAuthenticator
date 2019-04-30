@@ -36,7 +36,7 @@ namespace JotFormAuthenticator.Controllers
         {
             FormModel form = _repository.GetFormSubmission(SubmissionID);
 
-
+            List<FieldModel> fields = form.FormFields;
 
             return form;
         }

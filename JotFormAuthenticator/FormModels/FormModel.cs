@@ -8,7 +8,7 @@ namespace JotFormAuthenticator.Models
     public class FormModel : EntityBase
     {
         [Key]
-        public long ID { get; set; }
+        public int FormModelID { get; set; }
         [Required]
         public long FormID { get; set; }
         [Required]
@@ -16,6 +16,6 @@ namespace JotFormAuthenticator.Models
         [Required]
         public long SubmissionID { get; set; }
         public bool? Accepted { get; set; }
-        public ICollection<FieldModel> FormFields { get; set; }
+        public List<FieldModel> FormFields { get; set; }
     }
 }

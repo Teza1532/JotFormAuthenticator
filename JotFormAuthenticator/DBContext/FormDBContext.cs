@@ -12,8 +12,7 @@ namespace JotFormAuthenticator.DBContext
         public FormDBContext(DbContextOptions<FormDBContext> options) : base(options) { }
         public DbSet<FormModel> Forms { get; set; }
         public DbSet<FieldModel> Fields { get; set; }
-
-
+               
         public override int SaveChanges()
         {
             var AddedEntities = ChangeTracker.Entries().Where(E => E.State == EntityState.Added).ToList();

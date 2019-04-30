@@ -10,7 +10,7 @@ namespace JotFormAuthenticator.Models
     {
         [Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int FieldModelID { get; set; }
         public int FieldID { get; set; }
         public string FieldParentName{ get; set; }
         [Required]
@@ -20,7 +20,7 @@ namespace JotFormAuthenticator.Models
         [Required]
         public long SubmissionID { get; set; }
 
-        [ForeignKey("FormID")]
+        public int FormModelID { get; set; }
         public FormModel Form { get; set; }
     }
 }

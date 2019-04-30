@@ -1,9 +1,8 @@
 ﻿using JotFormAuthenticator.DBContext;
 using JotFormAuthenticator.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace JotFormAuthenticator.Repository
 {
@@ -24,10 +23,13 @@ namespace JotFormAuthenticator.Repository
 
         public List<FormModel> GetForms()
         {
-            return _context.Forms.ToList();
+            return _context.Forms
+                .Include(f => f.FormFields).ToList();
+            
         }
 
-        public FormModel GetFormSubmission(long SubmissionID) {
+        public FormModel GetFormSubmission(long SubmissionID)
+        {
 
             return _context.Forms.Where(f => f.SubmissionID == SubmissionID).FirstOrDefault();
         }

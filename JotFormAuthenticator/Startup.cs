@@ -31,7 +31,7 @@ namespace JotFormAuthenticator
             services.AddScoped<IFormRepository, FormRepository>();
 
             services.AddDbContext<FormDBContext>(opt =>
-                opt.UseInMemoryDatabase("Forms"));
+                opt.UseMySql("server=localhost;database=library;user=user;password="));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
