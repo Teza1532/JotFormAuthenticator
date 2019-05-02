@@ -1,5 +1,7 @@
 using DataAnalysis.DbContexts;
 using DataAnalysis.Repositories;
+using JotFormAuthenticator.DBContext;
+using JotFormAuthenticator.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,8 +30,12 @@ namespace DataAnalysis
             services.AddSpaStaticFiles(configuration => {
                 configuration.RootPath = "ClientApp/build";
             });
+            services.AddDbContext<FormDBContext>(opt =>
+    opt.UseMySql("server=localhost;database=form;user=root;password=password"));
+
 
             services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IFormRepository, FormRepository>();
 
             services.AddDbContext<VehicleDbContext>(opt =>
             opt.UseMySql("server=localhost;database=Vehicle;user=root;password=password"));

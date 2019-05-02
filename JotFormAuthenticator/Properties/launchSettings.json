@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:50685",
+      "applicationUrl": "http://localhost:4001",
       "sslPort": 44359
     }
   },
@@ -24,10 +24,10 @@
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
         "Server_Name": "localhost",
+        "Server_Pass": "",
         "Server_User": "root",
-        "Server_Pass": ""
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }

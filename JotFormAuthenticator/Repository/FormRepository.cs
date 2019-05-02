@@ -33,6 +33,7 @@ namespace JotFormAuthenticator.Repository
         {
             return _context.Forms
                 .Where(f => f.Accepted == true)
+                .Include(f => f.FormFields)
                 .OrderByDescending(f => f.CreatedOn)
                 .ToList();
         }
