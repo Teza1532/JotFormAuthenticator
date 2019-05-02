@@ -1,9 +1,7 @@
 ﻿import React, { Component } from 'react';
-import moment from 'moment';
 import './main.css';
-import { withRouter } from 'react-router';
 
-export class LockedFormLockedForm extends Component {
+export class LockedForm extends Component {
     static displayName = LockedForm.name;
 
     constructor(props) {
@@ -34,14 +32,16 @@ export class LockedFormLockedForm extends Component {
         let contents =
             this.state.loading
                 ? <p><em>Loading...</em></p>
-                : Form.renderForm(this.state.fields);
-        let formState = this.match.params.formStatus ? <h2>Accepted</h2> : <h2>Rejected</h2>;
+                : LockedForm.renderForm(this.state.fields);
+        debugger;
+        let formState = this.props.match.params.state ? <h2>Accepted</h2> : <h2>Rejected</h2>;
 
         return (
-            <div>
-                {formState}
-            </div>
+            
             <div class="row">
+                <div>
+                    {formState}
+                </div>
                 <h1 class="col-12">Index</h1>
                 <div class="row">
                     <div class="col-6">

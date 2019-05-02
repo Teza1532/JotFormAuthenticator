@@ -100,7 +100,7 @@ namespace JotFormAuthenticator.Repository
         public int RejectForm(int FormID)
         {
             FormModel form = _context.Forms
-                 .Where(f => FormID == f.FormID)
+                 .Where(f => FormID == f.FormModelID)
                  .Where(f => f.Accepted == null)
                  .SingleOrDefault();
 

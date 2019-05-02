@@ -2,32 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using JotFormAuthenticator.Models;
-using JotFormAuthenticator.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FormAuthenticator.Controllers
+namespace DataAnalysis.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        //private readonly IFormRepository _repository;
-
-        //public SampleDataController(IFormRepository Repository)
-        //{
-        //    _repository = Repository;
-        //}
-
         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-
-        //[HttpGet("[action]")]
-        //public List<FormModel> Forms()
-        //{
-        //    return _repository.GetForms();
-        //}
 
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()

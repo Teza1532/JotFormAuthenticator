@@ -18,7 +18,7 @@ export class Form extends Component {
     }
 
     acceptForm(formID) {
-        fetch('api/Home/AcceptForm/' + formID, method: "POST")
+        fetch('api/Home/AcceptForm/' + formID, { method: "PUT" })
             .then(response => response.text())
             .finally(() =>
                 this.props.history.push('/')            
@@ -26,7 +26,7 @@ export class Form extends Component {
     }
 
     rejectForm(formID) {
-       fetch('api/Home/RejectForm/' + formID, method: "POST",);
+        fetch('api/Home/RejectForm/' + formID, { method: "PUT" });
             this.props.history.push('/');      
     }
 

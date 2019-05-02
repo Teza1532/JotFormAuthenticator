@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import { Link } from 'react-router-dom';
+
 
 export class AcceptedForms extends Component {
     static displayName = AcceptedForms.name;
@@ -49,7 +52,7 @@ export class AcceptedForms extends Component {
         return (
 
             <div>
-                <h1>Forms</h1>
+                <h1>Accepted Forms</h1>
                 {contents}
             </div>
 
