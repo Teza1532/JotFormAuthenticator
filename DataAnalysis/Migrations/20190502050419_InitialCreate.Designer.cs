@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAnalysis.Migrations
 {
     [DbContext(typeof(VehicleDbContext))]
-    [Migration("20190502044018_InitialCreate")]
+    [Migration("20190502050419_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -8404,12 +8404,12 @@ namespace DataAnalysis.Migrations
             modelBuilder.Entity("DataAnalysis.Models.Job", b =>
                 {
                     b.HasOne("DataAnalysis.Models.Department", "Department")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DataAnalysis.Models.Vehicle", "Vehicle")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("VehicleID");
                 });
 #pragma warning restore 612, 618

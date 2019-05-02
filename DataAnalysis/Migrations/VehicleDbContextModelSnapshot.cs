@@ -8402,12 +8402,12 @@ namespace DataAnalysis.Migrations
             modelBuilder.Entity("DataAnalysis.Models.Job", b =>
                 {
                     b.HasOne("DataAnalysis.Models.Department", "Department")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DataAnalysis.Models.Vehicle", "Vehicle")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("VehicleID");
                 });
 #pragma warning restore 612, 618

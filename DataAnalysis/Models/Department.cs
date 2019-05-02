@@ -10,6 +10,6 @@ namespace DataAnalysis.Models
     {
         [Key]
         public int DepartmentID { get; set; }
-
+        public List<Job> Jobs { get; set; }
     }
 }

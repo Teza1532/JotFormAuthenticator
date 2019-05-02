@@ -1,4 +1,5 @@
 using DataAnalysis.DbContexts;
+using DataAnalysis.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,8 @@ namespace DataAnalysis
             services.AddSpaStaticFiles(configuration => {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
 
             services.AddDbContext<VehicleDbContext>(opt =>
             opt.UseMySql("server=localhost;database=Vehicle;user=root;password=password"));
