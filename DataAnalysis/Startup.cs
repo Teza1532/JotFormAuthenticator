@@ -29,7 +29,7 @@ namespace DataAnalysis
             });
 
             services.AddDbContext<VehicleDbContext>(opt =>
-            opt.UseMySql("server=localhost;database=form;user=root;password=password"));
+            opt.UseMySql("server=localhost;database=Vehicle;user=root;password=password"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
