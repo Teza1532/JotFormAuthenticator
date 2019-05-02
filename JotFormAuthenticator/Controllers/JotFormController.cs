@@ -34,7 +34,7 @@ namespace JotFormAuthenticator.Controllers
         [Route("GetSubmission")]
         public FormModel GetSubmission(long SubmissionID)
         {
-            FormModel form = _repository.GetFormSubmission(SubmissionID);
+            FormModel form = _repository.GetForm(SubmissionID);
 
             List<FieldModel> fields = form.FormFields;
 
@@ -70,14 +70,20 @@ namespace JotFormAuthenticator.Controllers
 
             foreach ( var f in Fields )
             {
-                if ( f.Value is string )
+                if ( f.Value is string)
                 {
-                    fields.Add(new FieldModel {
-                        FieldName = f.Key,
-                        FieldParentName = FormName,
-                        FieldValue = f.Value.ToString(),
-                        SubmissionID = SubmissionID
-                    });
+                    if ( f.Key == "slug" || f.Key == "event_id" )
+                    {
+
+                    }
+                    else {
+                        fields.Add(new FieldModel {
+                            FieldName = f.Key,
+                            FieldParentName = FormName,
+                            FieldValue = f.Value.ToString(),
+                            SubmissionID = SubmissionID
+                        });
+                    }
                 }
                 else
                 {

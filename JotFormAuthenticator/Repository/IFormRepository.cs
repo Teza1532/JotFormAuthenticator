@@ -11,7 +11,13 @@ namespace JotFormAuthenticator.Repository
         void AddForm(FormModel Form);
         List<FormModel> GetForms();
         List<FormModel> GetAllActiveForms();
-        FormModel GetFormSubmission(long SubmissionID);
+        FormModel GetForm(long SubmissionID);
         List<FieldModel> GetAllFields();
+        FormModel GetFormFields(int FormID);
+        List<FieldModel> getFields(int FormID);
+        int AcceptForm(int FormID);
+        int RejectForm(int FormID);
+        List<FormModel> GetAcceptedForms();
+        List<FormModel> GetRejectedForms();
     }
 }

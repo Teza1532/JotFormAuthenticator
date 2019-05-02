@@ -17,5 +17,6 @@ namespace JotFormAuthenticator.Models
         public long SubmissionID { get; set; }
         public bool? Accepted { get; set; }
         public List<FieldModel> FormFields { get; set; }
+
     }
 }
